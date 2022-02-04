@@ -1,4 +1,4 @@
-# horpao_application
+# HorPao_application
 
 A new Flutter project.
 
