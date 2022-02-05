@@ -1,16 +1,19 @@
 # HorPao_Application
 
-A new Flutter project.
+A new Flutter project for project practicum.
 
 ## ITE_G7_M1
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+This is the first project to make this application on the Flutter platform with the Dart language of my team.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Team member:
+- Chamroeun Sithy
+- Kuch Nimol
+- Kov Soukim
+- Chun Niza
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This application toke about calculating income with cost to help every people who excessive cost unconsciously.
+
+![](/Users/user/Documents/RUPP/PP/Logo/Logo2.png)
