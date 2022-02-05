@@ -16,4 +16,4 @@ Team member:
 
 This application toke about calculating income with cost to help every people who excessive cost unconsciously.
 
-![Logo Horpao](https://drive.google.com/file/d/1r1dvnstG3o-LExjgqmZa3nSy7GhkafMi/view?usp=sharing)
+![Logo Horpao](file:///Users/user/Documents/RUPP/PP/Logo/Logo2.png)
