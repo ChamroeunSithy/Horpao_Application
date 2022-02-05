@@ -16,4 +16,4 @@ Team member:
 
 This application toke about calculating income with cost to help every people who excessive cost unconsciously.
 
-![Logo Horpao](file:///Users/user/Documents/RUPP/PP/Logo/Logo2.png)
+![Logo Horpao](https://github.com/ChamroeunSithy/Flutter-ETEC/blob/7a21b180b231c7c5b8d4a2fbaac1bd529458c206/Logo2.png)
