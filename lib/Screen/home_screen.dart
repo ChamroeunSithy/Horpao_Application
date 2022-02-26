@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:horpao_application/Background/backgroun.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class HomePage extends StatelessWidget {
 
   get _buildBoby => Stack(
         children: [
-          _buildBackground(),
+          const Background(),
           Positioned(
             top: 50.0,
             child: Padding(
@@ -171,31 +172,6 @@ class HomePage extends StatelessWidget {
           ),
         ],
       );
-
-  Stack _buildBackground() {
-    return Stack(
-      children: [
-        const Image(
-          image: AssetImage('assets/Backgroun.jpg'),
-          fit: BoxFit.cover,
-        ),
-        Container(
-          height: 230.0,
-          color: const Color.fromRGBO(35, 97, 172, 1),
-        ),
-        Positioned(
-          top: 180.0,
-          child: ClipOval(
-            child: Container(
-              height: 100.0,
-              width: 428.0,
-              color: const Color.fromRGBO(35, 97, 172, 1),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
 
   get _buildBottom => BottomAppBar(
         notchMargin: 10.0,
