@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:horpao_application/Theme/horpao_color.dart';
 
 class BackgroundLoginRegister extends StatelessWidget {
   const BackgroundLoginRegister({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class BackgroundLoginRegister extends StatelessWidget {
           ),
           Container(
             height: 350.0,
-            color: const Color.fromRGBO(35, 97, 172, 1),
+            color: HorPaoColor().blue,
           ),
           Positioned(
             top: 300.0,
@@ -23,7 +24,7 @@ class BackgroundLoginRegister extends StatelessWidget {
               child: Container(
                 height: 100.0,
                 width: _screenWidth,
-                color: const Color.fromRGBO(35, 97, 172, 1),
+                color: HorPaoColor().blue,
               ),
             ),
           ),

@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:horpao_application/Background/backgroun_login_register.dart';
 import 'package:horpao_application/Theme/horpao_color.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   bool hide = true;
-  // ignore: prefer_typing_uninitialized_variables
+// ignore: prefer_typing_uninitialized_variables
   late var _screenWidth;
   // ignore: prefer_typing_uninitialized_variables
   late var _screenHight;
@@ -48,12 +48,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.circular(29.0),
                     ),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        const SizedBox(height: 22.0),
                         const ListTile(
                           title: Center(
                             child: Text(
-                              'Login Account',
+                              'Register',
                               style: TextStyle(
                                 fontFamily: 'BELCEADR.TTF',
                                 fontWeight: FontWeight.bold,
@@ -66,10 +66,22 @@ class _LoginScreenState extends State<LoginScreen> {
                         SizedBox(
                           width: 250.0,
                           child: TextFormField(
+                            keyboardType: TextInputType.name,
+                            autocorrect: false,
+                            decoration: const InputDecoration(
+                              labelText: 'Name',
+                            ),
+                            style: const TextStyle(
+                                fontFamily: 'BELCEADR.TTF', fontSize: 19.0),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 250.0,
+                          child: TextFormField(
                             keyboardType: TextInputType.emailAddress,
                             autocorrect: false,
                             decoration: const InputDecoration(
-                              labelText: 'Name or E-mail',
+                              labelText: 'E-mail',
                             ),
                             style: const TextStyle(
                                 fontFamily: 'BELCEADR.TTF', fontSize: 19.0),
@@ -98,20 +110,30 @@ class _LoginScreenState extends State<LoginScreen> {
                                 fontFamily: 'BELCEADR.TTF', fontSize: 19.0),
                           ),
                         ),
-                        const SizedBox(height: 10.0),
-                        InkWell(
-                          onTap: () {
-                            debugPrint('In case you forgot password ?');
-                          },
-                          child: Text(
-                            'In case you forgot password ?',
-                            style: TextStyle(
-                              fontSize: 12.0,
-                              color: HorPaoColor().blue,
+                        SizedBox(
+                          width: 250.0,
+                          child: TextFormField(
+                            keyboardType: TextInputType.text,
+                            obscureText: hide,
+                            autocorrect: false,
+                            decoration: InputDecoration(
+                              labelText: 'Confirm Password',
+                              suffixIcon: IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    hide = !hide;
+                                  });
+                                },
+                                icon: Icon(hide
+                                    ? Icons.visibility
+                                    : Icons.visibility_off),
+                              ),
                             ),
+                            style: const TextStyle(
+                                fontFamily: 'BELCEADR.TTF', fontSize: 19.0),
                           ),
                         ),
-                        const SizedBox(height: 25.0),
+                        const SizedBox(height: 20.0),
                         SizedBox(
                           width: 250.0,
                           child: MaterialButton(
@@ -121,70 +143,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8.0)),
                             child: const Text(
-                              'Login',
+                              'Create Account',
                               style: TextStyle(
                                   fontFamily: 'BELCEADR.TTF', fontSize: 18.0),
                             ),
                           ),
-                        ),
-                        Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            const SizedBox(
-                              height: 55.0,
-                              width: 250.0,
-                              child: Divider(
-                                thickness: 2.0,
-                              ),
-                            ),
-                            Container(
-                              alignment: Alignment.center,
-                              height: 25.0,
-                              width: 50.0,
-                              decoration: BoxDecoration(
-                                color: Colors.grey[350],
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: const Text(
-                                'OR',
-                                style: TextStyle(
-                                    fontFamily: 'BELCEADR.TTF', fontSize: 16.0),
-                              ),
-                            )
-                          ],
-                        ),
-                        const SizedBox(height: 10.0),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            InkWell(
-                              borderRadius: BorderRadius.circular(20.0),
-                              onTap: () {
-                                debugPrint('Facebook');
-                              },
-                              child: SizedBox(
-                                height: 38.0,
-                                child: Image.asset(
-                                  'assets/facebook.png',
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 15.0,
-                            ),
-                            InkWell(
-                              borderRadius: BorderRadius.circular(20.0),
-                              onTap: () {
-                                debugPrint('Google');
-                              },
-                              child: SizedBox(
-                                height: 40.0,
-                                child: Image.asset(
-                                  'assets/google-login-icon-6.jpg',
-                                ),
-                              ),
-                            ),
-                          ],
                         ),
                       ],
                     ),
@@ -192,11 +155,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               Positioned(
-                top: 750,
+                top: 750.0,
                 child: Column(
                   children: [
                     const Text(
-                      "Don't have an account?",
+                      "Already have account ?",
                       style: TextStyle(
                         fontFamily: 'BELCEADR.TTF',
                         fontSize: 20.0,
@@ -208,10 +171,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     InkWell(
                       onTap: () {
-                        debugPrint('Register');
+                        debugPrint('Login');
                       },
                       child: Text(
-                        'Register',
+                        'Login',
                         style: TextStyle(
                           color: HorPaoColor().blue,
                           fontFamily: 'BELCEADR.TTF',

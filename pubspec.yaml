@@ -65,6 +65,9 @@ flutter:
     - assets/1453912.jpg
     - assets/Logo2.png
     - assets/Logo welocome.png
+    - assets/facebook.png
+    - assets/google-login-icon-6.jpg
+    - assets/cartoon-students-using-mobile-app-for-education-vector-34347325.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

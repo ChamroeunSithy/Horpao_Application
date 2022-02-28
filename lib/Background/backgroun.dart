@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:horpao_application/Theme/horpao_color.dart';
 
 class Background extends StatelessWidget {
   const Background({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class Background extends StatelessWidget {
           ),
           Container(
             height: 230.0,
-            color: const Color.fromRGBO(35, 97, 172, 1),
+            color: HorPaoColor().blue,
           ),
           Positioned(
             top: 180.0,
@@ -23,7 +24,7 @@ class Background extends StatelessWidget {
               child: Container(
                 height: 100.0,
                 width: _screenwidth,
-                color: const Color.fromRGBO(35, 97, 172, 1),
+                color: HorPaoColor().blue,
               ),
             ),
           ),
