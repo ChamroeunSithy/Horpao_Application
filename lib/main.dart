@@ -1,11 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:horpao_application/Background/background_let_start.dart';
-import 'package:horpao_application/Screen/let_start_screen.dart';
-import 'package:horpao_application/Screen/register_screen.dart';
+import 'package:get/route_manager.dart';
 import 'package:horpao_application/Theme/horpao_color.dart';
-import 'package:horpao_application/Screen/login_screen.dart';
+import 'package:horpao_application/controllers/bindings/auth_binding.dart';
+import 'package:horpao_application/utils/root.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -14,12 +16,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: HorPaoColor().blue,
       ),
-      home: const LetStartScreen(),
+      initialBinding: AuthBinding(),
+      home: Root(),
     );
   }
 }
