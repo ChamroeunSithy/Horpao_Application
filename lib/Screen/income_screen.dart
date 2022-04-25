@@ -90,11 +90,13 @@ class IncomeScreen extends GetWidget<AuthController> {
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(16.0),
                               border: Border.all(
-                                  color: HorPaoColor().blue, width: 2),
+                                color: HorPaoColor().blue,
+                                width: 2,
+                              ),
                             ),
                             child: Center(
                               child: Text(
-                                _.user.salary.toString(),
+                                '\$${_.user.salary}',
                                 style: TextStyle(
                                   fontFamily: 'BELCEADR.TTF',
                                   color: HorPaoColor().blue,

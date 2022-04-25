@@ -51,6 +51,12 @@ dev_dependencies:
 flutter_launcher_name:
   name: "HorPao"
 
+  flutter_native_splash: ^2.1.6
+
+flutter_native_splash:
+  Backgroun: "assets/1453912.jpg"
+  image: "assets/Logo welocome.png"
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

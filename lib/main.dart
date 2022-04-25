@@ -1,9 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import 'package:horpao_application/Screen/start_screen.dart';
 import 'package:horpao_application/Theme/horpao_color.dart';
 import 'package:horpao_application/controllers/bindings/auth_binding.dart';
-import 'package:horpao_application/utils/root.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +22,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: HorPaoColor().blue,
       ),
       initialBinding: AuthBinding(),
-      home: Root(),
+      //home: Root(),
+      home: StartScreen(),
     );
   }
 }

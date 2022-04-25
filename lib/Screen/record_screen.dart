@@ -1,10 +1,13 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:horpao_application/Theme/horpao_color.dart';
+import 'package:horpao_application/controllers/bindings/auth_controller.dart';
+import 'package:horpao_application/controllers/user_controller.dart';
 
 import '../Background/backgroun.dart';
 
-class RecordScreen extends StatelessWidget {
+class RecordScreen extends GetWidget<AuthController> {
   const RecordScreen({Key? key}) : super(key: key);
 
   @override
@@ -169,119 +172,123 @@ class RecordScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 25.0),
-                FlipCard(
-                  front: Container(
-                    height: 420,
-                    width: 375,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          Colors.white,
-                          Color.fromARGB(255, 240, 247, 255),
-                        ],
-                      ),
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(70.0),
-                        bottomLeft: Radius.circular(70.0),
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          blurRadius: 10,
-                          offset: Offset(5, 5),
-                        ),
-                      ],
-                    ),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 20),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            SizedBox(
-                              width: 50.0,
-                            ),
-                            _buildTextTile('Your Income'),
-                            IconButton(
-                              onPressed: () {},
-                              icon: Icon(
-                                Icons.navigate_next_rounded,
-                                size: 40.0,
-                                color: HorPaoColor().blue,
-                              ),
+                GetX<UserController>(
+                  builder: (_) {
+                    return FlipCard(
+                      front: Container(
+                        height: 420,
+                        width: 375,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              Colors.white,
+                              Color.fromARGB(255, 240, 247, 255),
+                            ],
+                          ),
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(70.0),
+                            bottomLeft: Radius.circular(70.0),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              blurRadius: 10,
+                              offset: Offset(5, 5),
                             ),
                           ],
                         ),
-                        SizedBox(height: 15),
-                        _buildBox('\$5,000'),
-                        SizedBox(height: 30),
-                        _buildTextTile('Cost'),
-                        SizedBox(height: 15),
-                        _buildBox('\$3,020'),
-                        Divider(
-                          height: 50.0,
-                          thickness: 0.3,
-                          color: HorPaoColor().blue,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                        child: Column(
                           children: [
-                            _buildTextTile('Balance'),
-                            SizedBox(width: 30),
-                            _buildBox('\$1,980')
-                          ],
-                        ),
-                        SizedBox(height: 20.0),
-                        Row(
-                          children: [
-                            SizedBox(width: 38.0),
-                            Text(
-                              'Note:',
-                              style: TextStyle(
-                                color: HorPaoColor().blue,
-                                fontFamily: 'BELCEADR.TTF',
-                                fontSize: 15,
-                              ),
+                            SizedBox(height: 20),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                SizedBox(
+                                  width: 50.0,
+                                ),
+                                _buildTextTile('Your Income'),
+                                IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(
+                                    Icons.navigate_next_rounded,
+                                    size: 40.0,
+                                    color: HorPaoColor().blue,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 15),
+                            _buildBox('\$${_.user.salary}'),
+                            SizedBox(height: 30),
+                            _buildTextTile('Cost'),
+                            SizedBox(height: 15),
+                            _buildBox('\$3,020'),
+                            Divider(
+                              height: 50.0,
+                              thickness: 0.3,
+                              color: HorPaoColor().blue,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                _buildTextTile('Balance'),
+                                SizedBox(width: 30),
+                                _buildBox('\$1,980')
+                              ],
+                            ),
+                            SizedBox(height: 20.0),
+                            Row(
+                              children: [
+                                SizedBox(width: 38.0),
+                                Text(
+                                  'Note:',
+                                  style: TextStyle(
+                                    color: HorPaoColor().blue,
+                                    fontFamily: 'BELCEADR.TTF',
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
-                      ],
-                    ),
-                  ),
-                  back: Container(
-                    height: 420,
-                    width: 375,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          Colors.white,
-                          Color.fromARGB(255, 240, 247, 255),
-                        ],
                       ),
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(70.0),
-                        bottomRight: Radius.circular(70.0),
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          blurRadius: 10,
-                          offset: Offset(5, 5),
+                      back: Container(
+                        height: 420,
+                        width: 375,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              Colors.white,
+                              Color.fromARGB(255, 240, 247, 255),
+                            ],
+                          ),
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(70.0),
+                            bottomRight: Radius.circular(70.0),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              blurRadius: 10,
+                              offset: Offset(5, 5),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          _buildTextTile('Daily cost Detail'),
-                          SizedBox(height: 30.0),
-                          Image.asset('assets/chart.png'),
-                        ],
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              _buildTextTile('Daily cost Detail'),
+                              SizedBox(height: 30.0),
+                              Image.asset('assets/chart.png'),
+                            ],
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
+                    );
+                  },
                 ),
               ],
             ),
